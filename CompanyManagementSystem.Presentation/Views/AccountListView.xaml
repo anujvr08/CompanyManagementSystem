@@ -1,0 +1,19 @@
+<UserControl x:Class="CompanyManagementSystem.Presentation.Views.AccountListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel Margin="20">
+        <TextBlock Text="Account List" Style="{StaticResource HeadingText}" DockPanel.Dock="Top" />
+
+        <Button Content="Back to Dashboard" Command="{Binding BackCommand}" 
+                DockPanel.Dock="Bottom" HorizontalAlignment="Left" Padding="16,6" Margin="0,10,0,0" />
+
+        <DataGrid ItemsSource="{Binding Accounts}" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding AccountId}" Width="60" />
+                <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" Width="*" />
+                <DataGridTextColumn Header="Group" Binding="{Binding Group}" Width="120" />
+                <DataGridTextColumn Header="Balance" Binding="{Binding Balance}" Width="120" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

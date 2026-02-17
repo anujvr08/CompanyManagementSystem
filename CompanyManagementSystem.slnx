@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CompanyManagementSystem.Domain/CompanyManagementSystem.Domain.csproj" Id="a1b2c3d4-1111-1111-1111-000000000001" />
+  <Project Path="CompanyManagementSystem.Infrastructure/CompanyManagementSystem.Infrastructure.csproj" Id="a1b2c3d4-2222-2222-2222-000000000002" />
+  <Project Path="CompanyManagementSystem.Application/CompanyManagementSystem.Application.csproj" Id="a1b2c3d4-3333-3333-3333-000000000003" />
+  <Project Path="CompanyManagementSystem.Presentation/CompanyManagementSystem.Presentation.csproj" Id="a1b2c3d4-4444-4444-4444-000000000004" />
+</Solution>

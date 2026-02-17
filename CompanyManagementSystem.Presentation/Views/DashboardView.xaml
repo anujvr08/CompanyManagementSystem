@@ -1,0 +1,20 @@
+<UserControl x:Class="CompanyManagementSystem.Presentation.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel Margin="20">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="{Binding CompanyName}" Style="{StaticResource HeadingText}" />
+            <TextBlock Text="Dashboard" Style="{StaticResource SubheadingText}" Margin="0,0,0,20" />
+        </StackPanel>
+
+        <Button Content="Close Company" Command="{Binding CloseCompanyCommand}" 
+                DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="16,6" Margin="0,10,0,0" />
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Create User" Command="{Binding CreateUserCommand}" Padding="16,8" Margin="0,0,0,8" Width="200" />
+            <Button Content="User List" Command="{Binding UserListCommand}" Padding="16,8" Margin="0,0,0,8" Width="200" />
+            <Button Content="Create Account" Command="{Binding CreateAccountCommand}" Padding="16,8" Margin="0,0,0,8" Width="200" />
+            <Button Content="Account List" Command="{Binding AccountListCommand}" Padding="16,8" Width="200" />
+        </StackPanel>
+    </DockPanel>
+</UserControl>
