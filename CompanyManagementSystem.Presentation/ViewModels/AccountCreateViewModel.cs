@@ -83,8 +83,8 @@ namespace CompanyManagementSystem.Presentation.ViewModels
 
                 var dto = new AccountDTO
                 {
-                    AccountName = AccountName?.Trim() ?? "",
-                    Group = Group?.Trim() ?? "",
+                    AccountName = AccountName,
+                    Group = Group,
                     Balance = balanceValue,
                     CompanyId = GlobalConstants.CurrentCompanyId,
                     UserId = GlobalConstants.CurrentUserId

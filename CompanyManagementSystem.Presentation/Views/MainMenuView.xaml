@@ -1,39 +1,11 @@
 <UserControl x:Class="CompanyManagementSystem.Presentation.Views.MainMenuView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
-        <!-- Center Card -->
-        <Border Style="{StaticResource CardStyle}" 
-                VerticalAlignment="Center" HorizontalAlignment="Center" 
-                Width="400">
-            <StackPanel>
-                <TextBlock Text="Company Management" 
-                           Style="{StaticResource HeaderStyle}" 
-                           HorizontalAlignment="Center" TextAlignment="Center" />
-                
-                <TextBlock Text="System" 
-                           Style="{StaticResource HeaderStyle}" 
-                           FontSize="24" Margin="0,-10,0,30"
-                           HorizontalAlignment="Center" TextAlignment="Center" />
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+        <TextBlock Text="Company Management System" Style="{StaticResource HeadingText}" TextAlignment="Center" />
+        <TextBlock Text="Main Menu" Style="{StaticResource SubheadingText}" TextAlignment="Center" Margin="0,0,0,20" />
 
-                <TextBlock Text="Welcome! Please select an option to continue." 
-                           Style="{StaticResource SubHeaderStyle}" 
-                           HorizontalAlignment="Center" TextAlignment="Center" />
-
-                <Button Content="Create New Company" 
-                        Command="{Binding CreateCompanyCommand}" 
-                        Style="{StaticResource ModernBtn}" 
-                        Margin="0,0,0,15" />
-                
-                <Button Content="Load Existing Company" 
-                        Command="{Binding LoadCompanyCommand}" 
-                        Style="{StaticResource SecondaryBtn}" />
-            </StackPanel>
-        </Border>
-        
-        <!-- Footer Version -->
-        <TextBlock Text="v1.0.0" Foreground="{StaticResource TextSecondaryBrush}" 
-                   VerticalAlignment="Bottom" HorizontalAlignment="Center" 
-                   Margin="20" Opacity="0.5"/>
-    </Grid>
+        <Button Content="Create New Company" Command="{Binding CreateCompanyCommand}" Margin="0,0,0,10" Padding="10,8" />
+        <Button Content="Load Existing Company" Command="{Binding LoadCompanyCommand}" Padding="10,8" />
+    </StackPanel>
 </UserControl>

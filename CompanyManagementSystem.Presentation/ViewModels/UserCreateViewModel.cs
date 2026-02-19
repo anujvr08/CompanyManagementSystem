@@ -62,8 +62,8 @@ namespace CompanyManagementSystem.Presentation.ViewModels
 
                 var dto = new UserDTO
                 {
-                    UserName = UserName?.Trim() ?? "",
-                    Password = password?.Trim() ?? "",
+                    UserName = UserName,
+                    Password = password,
                     CompanyId = GlobalConstants.CurrentCompanyId
                 };
 
