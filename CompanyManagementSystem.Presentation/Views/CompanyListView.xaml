@@ -1,23 +1,45 @@
 <UserControl x:Class="CompanyManagementSystem.Presentation.Views.CompanyListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <DockPanel Margin="20">
-        <TextBlock Text="Select a Company" Style="{StaticResource HeadingText}" DockPanel.Dock="Top" />
+    <Grid Margin="20">
+        <!-- Main Card Container -->
+        <Border Style="{StaticResource CardStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button Content="Back" Command="{Binding BackCommand}" Margin="0,0,8,0" Padding="16,6" />
-            <Button Content="Select" Command="{Binding SelectCompanyCommand}" Padding="16,6" />
-        </StackPanel>
+                <!-- Header -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,20">
+                    <TextBlock Text="Select Company" Style="{StaticResource HeaderStyle}" />
+                    <TextBlock Text="Choose an existing company to manage" Style="{StaticResource SubHeaderStyle}" Margin="0" />
+                </StackPanel>
 
-        <DataGrid ItemsSource="{Binding Companies}" SelectedItem="{Binding SelectedCompany}"
-                  AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Margin="0,10,0,0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding CompanyId}" Width="60" />
-                <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" Width="*" />
-                <DataGridTextColumn Header="GSTIN" Binding="{Binding GSTIN}" Width="150" />
-                <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="100" />
-                <DataGridTextColumn Header="State" Binding="{Binding State}" Width="100" />
-            </DataGrid.Columns>
-        </DataGrid>
-    </DockPanel>
+                <!-- List -->
+                <DataGrid Grid.Row="1" ItemsSource="{Binding Companies}" 
+                          SelectedItem="{Binding SelectedCompany}" 
+                          AutoGenerateColumns="False" 
+                          IsReadOnly="True" 
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" Width="*" />
+                        <DataGridTextColumn Header="GSTIN" Binding="{Binding GSTIN}" Width="150" />
+                        <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="150" />
+                        <DataGridTextColumn Header="State" Binding="{Binding State}" Width="150" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- Actions -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                    <Button Content="Back" Command="{Binding BackCommand}" 
+                            Style="{StaticResource SecondaryBtn}" Margin="0,0,10,0" Width="100"/>
+                    <Button Content="Open &amp; Login" Command="{Binding OpenCommand}" 
+                            Style="{StaticResource ModernBtn}" Width="140"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
 </UserControl>

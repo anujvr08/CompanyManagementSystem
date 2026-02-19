@@ -69,12 +69,18 @@ namespace CompanyManagementSystem.Presentation.ViewModels
                     return;
                 }
 
+                if (!string.IsNullOrWhiteSpace(GSTIN) && GSTIN.Trim().Length != 15)
+                {
+                    MessageBox.Show("GSTIN must be exactly 15 characters.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 var dto = new CompanyDTO
                 {
-                    CompanyName = CompanyName,
-                    GSTIN = GSTIN,
-                    Country = Country,
-                    State = State
+                    CompanyName = CompanyName?.Trim() ?? "",
+                    GSTIN = GSTIN?.Trim() ?? "",
+                    Country = Country?.Trim() ?? "",
+                    State = State?.Trim() ?? ""
                 };
 
                 _companyService.SaveCompany(dto);
